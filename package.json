@@ -6,7 +6,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "biome lint src",
+    "format": "biome format src",
+    "check": "biome check src --write"
   },
   "dependencies": {
     "astro": "^5.15.1"

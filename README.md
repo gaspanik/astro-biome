@@ -1,46 +1,84 @@
-# Astro Starter Kit: Basics
+# Astro w/ Biome
 
-```sh
-pnpm create astro@latest -- --template basics
+このプロジェクトは **Astro** フレームワークを使用して構築されており、コード品質とフォーマットのために **Biome** を統合しています。
+
+## 🚀 プロジェクト構成
+
+- **Astro**: 高速で現代的な静的サイトジェネレーター
+- **Biome**: 高速なJavaScript/TypeScript用リンター・フォーマッター
+
+## 📦 セットアップ
+
+### 必要な環境
+- Node.js 18.14.1 以上
+- pnpm
+
+### インストール
+
+```bash
+# 依存関係のインストール
+pnpm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🛠 開発コマンド
 
-## 🚀 Project Structure
+| コマンド | 説明 |
+|---------|------|
+| `pnpm dev` | 開発サーバーを起動（http://localhost:4321） |
+| `pnpm build` | 本番用ビルドを作成 |
+| `pnpm preview` | ビルド結果をプレビュー |
+| `pnpm astro` | Astro CLI コマンドを実行 |
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🔧 Biome による品質管理
 
-```text
+このプロジェクトでは Biome を使用してコード品質を維持しています：
+
+### Biome コマンド
+```bash
+# コードのリント
+pnpm lint .
+
+# フォーマット
+pnpm format .
+
+# リントとフォーマットに自動修正を適用
+pnpm check --write .
+```
+
+### 設定
+- 設定ファイル: `biome.json`
+- サポート言語: JavaScript, TypeScript, JSX, TSX
+- 自動フォーマット・リントルールが適用されます
+
+## 📁 プロジェクト構造
+
+```
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+├── public/          # 静的ファイル
+├── src/
+│   ├── components/  # Astro コンポーネント
+│   ├── layouts/     # レイアウトコンポーネント
+│   └── pages/       # ページファイル
+├── astro.config.mjs # Astro 設定
+├── biome.json       # Biome 設定
+└── package.json     # プロジェクト設定
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🌟 特徴
 
-## 🧞 Commands
+- ⚡️ 高速な開発体験
+- 🎯 TypeScript サポート
+- 🔍 統合されたリント・フォーマット
+- 📱 レスポンシブデザイン対応
+- 🚀 最適化されたビルド出力
 
-All commands are run from the root of the project, from a terminal:
+## 開発ワークフロー
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+1. `pnpm dev` で開発サーバーを起動
+2. コードを編集
+3. Biome が自動的にコード品質をチェック
+4. `pnpm build` で本番ビルドを作成
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+**注意**: コミット前には `pnpm check` を実行してコード品質を確保してください。
