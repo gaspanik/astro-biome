@@ -36,13 +36,13 @@ pnpm install
 ### Biome コマンド
 ```bash
 # コードのリント
-pnpm lint .
+pnpm lint
 
 # フォーマット
-pnpm format .
+pnpm format
 
 # リントとフォーマットに自動修正を適用
-pnpm check --write .
+pnpm check --write
 ```
 
 ### 設定
