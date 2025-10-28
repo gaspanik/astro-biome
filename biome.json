@@ -4,8 +4,15 @@
   "files": { "ignoreUnknown": true },
   "formatter": {
     "enabled": true,
+    "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 120,
+    "attributePosition": "auto",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "expand": "auto",
     "useEditorconfig": true
   },
   "linter": {
@@ -13,23 +20,30 @@
     "rules": { "recommended": true },
     "includes": ["**", "!dist"]
   },
-  "html": {
-    "formatter": { "enabled": true, "indentScriptAndStyle": false },
-    "experimentalFullSupportEnabled": true
-  },
   "javascript": {
-    "formatter": { "quoteStyle": "single", "semicolons": "asNeeded" }
+    "formatter": {
+      "enabled": true,
+      "jsxQuoteStyle": "single",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "all",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto",
+      "bracketSpacing": true
+    }
   },
   "css": {
-    "formatter": { "quoteStyle": "double" },
-    "parser": { "tailwindDirectives": false }
+    "parser": { "tailwindDirectives": false },
+    "formatter": { "enabled": true, "quoteStyle": "double" }
   },
-  "assist": {
-    "enabled": true,
-    "actions": {
-      "source": {
-        "organizeImports": "off"
-      }
+  "html": {
+    "experimentalFullSupportEnabled": true,
+    "formatter": {
+      "enabled": true,
+      "indentScriptAndStyle": false,
+      "selfCloseVoidElements": "always"
     }
   },
   "overrides": [
@@ -37,16 +51,17 @@
       "includes": ["**/*.astro"],
       "linter": {
         "rules": {
-          "style": {
-            "useConst": "off",
-            "useImportType": "off"
-          },
           "correctness": {
-            "noUnusedVariables": "off",
-            "noUnusedImports": "off"
-          }
+            "noUnusedImports": "off",
+            "noUnusedVariables": "off"
+          },
+          "style": { "useConst": "off", "useImportType": "off" }
         }
       }
     }
-  ]
+  ],
+  "assist": {
+    "enabled": true,
+    "actions": { "source": { "organizeImports": "off" } }
+  }
 }
