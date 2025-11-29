@@ -35,20 +35,20 @@ pnpm install
 
 ### Biome コマンド
 ```bash
-# コードのリント
+# コードのリント (*.astro を除く)
 pnpm lint
 
-# フォーマット
+# フォーマット (*.astro を除く)
 pnpm format
 
-# リントとフォーマットに自動修正を適用
-pnpm check --write
+# Astro ファイルの型チェック
+pnpm check
 ```
 
 ### 設定
 - 設定ファイル: `biome.json`
-- サポート言語: JavaScript, TypeScript, JSX, TSX
-- 自動フォーマット・リントルールが適用されます
+- サポート言語: JavaScript, TypeScript, JSX, TSX, JSON, CSS
+- **注意**: `*.astro` ファイルは Biome の対象外です。Astro ファイルは `astro check` でチェックされます
 
 ## 📁 プロジェクト構造
 
@@ -76,9 +76,10 @@ pnpm check --write
 
 1. `pnpm dev` で開発サーバーを起動
 2. コードを編集
-3. Biome が自動的にコード品質をチェック
-4. `pnpm build` で本番ビルドを作成
+3. Biome が自動的にコード品質をチェック (JS/TS/JSON/CSS)
+4. `pnpm check` で Astro ファイルの型チェック
+5. `pnpm build` で本番ビルドを作成
 
 ---
 
-**注意**: コミット前には `pnpm check` を実行してコード品質を確保してください。
+**注意**: コミット前には `pnpm lint`、`pnpm format`、`pnpm check` を実行してコード品質を確保してください。

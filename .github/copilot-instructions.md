@@ -11,7 +11,8 @@ Astro 5.x web application using **Biome** (not ESLint/Prettier) for linting and 
 
 ### Code Quality: Biome (NOT ESLint/Prettier)
 - **Never suggest ESLint or Prettier** - this project uses Biome exclusively
-- Config: `biome.json` with strict formatting rules
+- Config: `biome.json` with strict formatting rules - **excludes `*.astro` files**
+- Astro files are checked via `pnpm check` (`astro check`) instead
 - Always run `pnpm lint` and `pnpm format` before suggesting code is complete
 
 ### Task Runner: mise (Optional)
@@ -73,8 +74,8 @@ Assets from `src/assets/` must use `.src` property: `<img src={astroLogo.src} />
 ## Development Workflow
 
 1. **Start dev server**: `pnpm dev` (http://localhost:4321)
-2. **Type checking**: `pnpm check` (runs `astro check`)
-3. **Before commit**: `pnpm lint` and `pnpm format`
+2. **Type checking**: `pnpm check` (runs `astro check` for TypeScript and Astro files)
+3. **Before commit**: `pnpm lint` and `pnpm format` (Biome handles JS/TS/JSON/CSS, not `.astro`)
 4. **Build**: `pnpm build` → `dist/` directory
 5. **Preview build**: `pnpm preview` (depends on build)
 
