@@ -13,12 +13,12 @@
     "format": "biome format --write"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "astro": "^5.18.0",
+    "@astrojs/check": "^0.9.8",
+    "astro": "^6.0.7",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.4"
+    "@biomejs/biome": "2.4.8"
   },
-  "packageManager": "pnpm@10.30.3"
+  "packageManager": "pnpm@10.32.1"
 }
